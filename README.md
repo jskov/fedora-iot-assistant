@@ -17,7 +17,9 @@ $ cd ROOT OF REPOSITORY
 $ rpmbuild --define "_topdir $(pwd)" --define "_sourcedir $(pwd)/SOURCES/assistant" -ba SPECS/assistant.spec
 ```
 
-## Install RPM
+## Installation
+
+### RPM
 
 ```console
 # The --uninstall allows updating an existing layered rpm (older version)
@@ -29,6 +31,11 @@ $ sudo systemctl enable assistant-prep
 $ sudo systemctl reboot
 ```
 
+### Firewall
+
+```console
+$ sudo firewall-cmd --add-port=8123/tcp --permanent
+```
 
 ## Notes
 
