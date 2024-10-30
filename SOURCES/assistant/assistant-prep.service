@@ -1,0 +1,31 @@
+# Preparation script for running assistant.
+# To be placed in /usr/lib/systemd/system/assistant-prep.service
+#
+# The script runs as root and contains actions to:
+# * Ensures dialout group is defined in /etc/group
+#   See https://docs.fedoraproject.org/en-US/fedora-silverblue/troubleshooting/#_unable_to_add_user_to_group
+# * Ensures user assistant is created
+# * Sets up linger for the assistant user
+# * Ensures that the assistant data folder exists
+# * Define subuids/gids for the assistant user so Podman can make use of other users in the container
+# * Allow Podman access to USB
+#   See https://docs.podman.io/en/v4.3/markdown/podman-run.1.html#device-host-device-container-device-permissions
+
+[Service]
+Type=oneshot
+
+ExecStartPre=sh -c 'g=$(grep -E "^dialout:" /usr/lib/group) && grep -q "$g" /etc/group || echo "$g" | tee -a /etc/group'
+ExecStartPre=sh -c 'id assistant 2>/dev/null || useradd --uid 3000 -G dialout assistant'
+ExecStartPre=loginctl enable-linger assistant
+ExecStartPre=sh -c 'mkdir -p /opt/data/services/assistant/ && chown assistant:assistant /opt/data/services/assistant/'
+ExecStart=setsebool container_use_devices true
+RemainAfterExit=true
+
+[Unit]
+# Wait for sysusers (so creating user is ok)
+After=systemd-sysusers.service
+# Do it before network-online which user quadlets wait for
+Before=network-online.target
+
+[Install]
+WantedBy=default.target
