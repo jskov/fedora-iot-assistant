@@ -16,19 +16,21 @@ Build rpm locally:
 ```console
 $ toolbox enter fedora-41
 $ cd ROOT OF REPOSITORY
+$ rpmlint assistant.spec
 $ tito build --rpm --test
 ```
 
-Update spec version (--keep-version to bump only rpm-suffix):
+Update spec version (--keep-version to add rpm-suffix):
 
 ```console
-$ tito tag --keep-version
+$ tito tag
+# --keep-version
 ```
 
 Build from repo:
 
 ```console
-$ copr-cli buildscm --clone-url https://github.com/jskov/fedora-iot-assistant.git --commit tito --method tito jskov/iot-assistant
+$ copr-cli buildscm --clone-url https://github.com/jskov/fedora-iot-assistant.git --method tito jskov/iot-assistant
 ```
 
 
