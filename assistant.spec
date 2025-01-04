@@ -51,6 +51,12 @@ install -Dp -m644 assistant.container %{buildroot}/etc/containers/systemd/users/
 
 
 %changelog
+* Sat Jan 04 2025 Jesper Skov <jskov@mada.dk> 2024.10.4-3
+- bump version (jskov@mada.dk)
+- disable debug package (jskov@mada.dk)
+- rename container file (jskov@mada.dk)
+- No source refs (jskov@mada.dk)
+
 * Sat Jan 04 2025 Jesper Skov <jskov@mada.dk> 2024.10.4-2
 - one source file (jskov@mada.dk)
 - lint/tag gelp (jskov@mada.dk)
