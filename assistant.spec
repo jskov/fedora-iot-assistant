@@ -49,6 +49,10 @@ install -Dp -m644 %{SOURCE1} %{buildroot}/etc/containers/systemd/users/3000/assi
 
 
 %changelog
+* Sat Jan 04 2025 Jesper Skov <jskov@mada.dk> 2024.10.4-2
+- one source file (jskov@mada.dk)
+- lint/tag gelp (jskov@mada.dk)
+
 * Sat Jan 04 2025 Jesper Skov <jskov@mada.dk>
 - lint/tag gelp (jskov@mada.dk)
 
