@@ -1,6 +1,6 @@
 Name: assistant
 Version: 2024.10.4
-Release: 2%{?dist}
+Release: 3%{?dist}
 Summary: Assistant container with Fedora IoT
 
 License: EUPL-1.2
