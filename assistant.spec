@@ -16,7 +16,9 @@ BuildRequires: systemd-rpm-macros
 
 %description
  
-Necessary configuration for running Assistant f in a Systemd container on Fedora IoT.
+Necessary configuration for running Assistant in a Systemd container on Fedora IoT.
+
+%global debug_package %{nil}
 
 %prep
 %setup -q
