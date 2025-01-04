@@ -28,8 +28,8 @@ Necessary configuration for running Assistant f in a Systemd container on Fedora
 rm -f %{buildroot}/etc/containers/systemd/users/3000/assistant.container
 rm -f %{buildroot}/usr/lib/systemd/system/assistant-prep.service
 
-install -Dp -m644 %{SOURCE0} %{buildroot}/usr/lib/systemd/system/assistant-prep.service
-install -Dp -m644 %{SOURCE1} %{buildroot}/etc/containers/systemd/users/3000/assistant.container
+install -Dp -m644 assistant-prep.service %{buildroot}/usr/lib/systemd/system/assistant-prep.service
+install -Dp -m644 assistant.container %{buildroot}/etc/containers/systemd/users/3000/assistant.container
 
 %pre
 
