@@ -1,13 +1,12 @@
 Name: assistant
-Version: 2024.10.5
-Release: 1%{?dist}
+Version: 2024.10.4
+Release: 2%{?dist}
 Summary: Assistant container with Fedora IoT
 
 License: EUPL-1.2
 URL: https://github.com/jskov/kb
 
-Source0: assistant-prep.service
-Source1: assistant.dockerfile
+Source0: %{name}-%{version}.tar.gz
 
 Requires(pre):    /usr/sbin/useradd, /usr/bin/getent
 Requires(postun): /usr/sbin/userdel
@@ -50,6 +49,12 @@ install -Dp -m644 %{SOURCE1} %{buildroot}/etc/containers/systemd/users/3000/assi
 
 
 %changelog
+* Sat Jan 04 2025 Jesper Skov <jskov@mada.dk>
+- lint/tag gelp (jskov@mada.dk)
+
+* Sat Jan 04 2025 Jesper Skov <jskov@mada.dk>
+- lint/tag gelp (jskov@mada.dk)
+
 * Sat Jan 04 2025 Jesper Skov <jskov@mada.dk> 2024.10.5-1
 - rpmlint cleanup (jskov@mada.dk)
 

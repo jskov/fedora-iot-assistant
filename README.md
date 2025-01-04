@@ -20,11 +20,10 @@ $ rpmlint assistant.spec
 $ tito build --rpm --test
 ```
 
-Update spec version (--keep-version to add rpm-suffix):
+Update spec version (--keep-version to keep manually maintained version in spec file):
 
 ```console
-$ tito tag
-# --keep-version
+$ tito tag --keep-version
 ```
 
 Build from repo:
