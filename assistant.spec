@@ -56,5 +56,6 @@ rm -rf $RPM_BUILD_ROOT
 %changelog
 * Sat Jan 04 2025 Jesper Skov <jskov@mada.dk> 2024.10.4-0
 - new package built with tito
+
 * Tue Sep 10 2024 Jesper Skov <jskov@mada.dk>
 - First release
