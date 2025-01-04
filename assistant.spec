@@ -19,10 +19,10 @@ BuildRequires: systemd-rpm-macros
  
 Necessary configuration for running Assistant f in a Systemd container on Fedora IoT.
 
-# No prep/setup, using files directly from the source folder
-#%prep
-#%setup -q
-#%build
+%prep
+%setup -q
+
+%build
 
 %install
 
@@ -43,10 +43,6 @@ install -Dp -m644 %{SOURCE1} %{buildroot}/etc/containers/systemd/users/3000/assi
 %postun
 %systemd_postun_with_restart assistant-prep
 
-%clean
-
-rm -rf $RPM_BUILD_ROOT
- 
 %files
 
 /usr/lib/systemd/system/assistant-prep.service
