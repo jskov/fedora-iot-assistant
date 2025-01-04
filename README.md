@@ -8,14 +8,29 @@ Set up toolbox:
 $ toolbox create fedora-41 -r f41
 
 $ toolbox enter fedora-41
-$ sudo dnf install rpmbuild selinux-policy-devel -y
+$ sudo dnf install rpmbuild selinux-policy-devel tito -y
 ```
+
+Build rpm locally:
 
 ```console
 $ toolbox enter fedora-41
 $ cd ROOT OF REPOSITORY
-$ rpmbuild --define "_topdir $(pwd)" --define "_sourcedir $(pwd)/SOURCES/assistant" -ba SPECS/assistant.spec
+$ tito build --rpm --test
 ```
+
+Update spec version (--keep-version to bump only rpm-suffix):
+
+```console
+$ tito tag --keep-version
+```
+
+Build from repo:
+
+```console
+$ copr-cli buildscm --clone-url https://github.com/jskov/fedora-iot-assistant.git --commit tito --method tito jskov/iot-assistant
+```
+
 
 ## Installation
 
