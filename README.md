@@ -1,3 +1,18 @@
+# Home Assistant RPM for Fedora IOT
+
+[![Copr build status](https://copr.fedorainfracloud.org/coprs/jskov/iot-assistant/package/assistant/status_image/last_build.png)](https://copr.fedorainfracloud.org/coprs/jskov/iot-assistant/package/assistant/)
+
+I use this RPM for layering in Fedora IOT.
+
+It runs [Home Assistant](https://www.home-assistant.io/) in a [Podman Quadlet](https://docs.podman.io/en/latest/markdown/podman-systemd.unit.5.html) with a preliminary service to fix the integration with the system (user setup and USB access).
+
+>[!NOTE]
+>This project is Open Source. But I am not interested in providing support or help in any form.  
+>You are welcome to fork it though!
+
+# Dev notes
+
+
 ## Build RPM
 
 Build requires RPM 4.20 so needs to be built on Fedora 41 or newer.
