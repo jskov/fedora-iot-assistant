@@ -1,6 +1,6 @@
 Name: assistant
-Version: 2024.10.4
-Release: 0%{?dist}
+Version: 2024.10.5
+Release: 1%{?dist}
 Summary: Assistant container with Fedora IoT
 
 License: EUPL-1.2
@@ -50,6 +50,15 @@ install -Dp -m644 %{SOURCE1} %{buildroot}/etc/containers/systemd/users/3000/assi
 
 
 %changelog
+* Sat Jan 04 2025 Jesper Skov <jskov@mada.dk> 2024.10.5-1
+- rpmlint cleanup (jskov@mada.dk)
+
+* Sat Jan 04 2025 Jesper Skov <jskov@mada.dk>
+- rpmlint cleanup (jskov@mada.dk)
+
+* Sat Jan 04 2025 Jesper Skov <jskov@mada.dk>
+- rpmlint cleanup (jskov@mada.dk)
+
 * Sat Jan 04 2025 Jesper Skov <jskov@mada.dk> 2024.10.4-0
 - new package built with tito
 
